@@ -1,136 +1,131 @@
 # Decentralized Voting System
 
-Sistema de votación descentralizado implementado en Solidity para gobernanza on-chain.
+Decentralized voting system implemented in Solidity for on-chain governance.
 
 ![Solidity](https://img.shields.io/badge/Solidity-^0.8.20-363636?style=for-the-badge&logo=solidity)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Remix](https://img.shields.io/badge/Remix-IDE-blue?style=for-the-badge)
 
-## 📋 Descripción
+## 📋 Description
 
-Sistema de votación que permite a los usuarios crear propuestas y votar de forma descentralizada. Implementa un modelo democrático de 1 dirección = 1 voto con períodos de votación limitados y prevención de doble voto.
+Voting system that allows users to create proposals and vote in a decentralized manner. Implements a democratic model of 1 address = 1 vote with limited voting periods and double-vote prevention.
 
-## ✨ Características
+## ✨ Features
 
-- Creación de propuestas por cualquier usuario
-- Sistema de votación: 1 dirección = 1 voto
-- Periodo de votación configurable (default: 3 días)
-- Prevención de doble voto mediante mapping
-- Eventos para tracking de actividad on-chain
-- Consultas de estado en tiempo real
-- Ejecución de propuestas tras finalización del periodo
+- Proposal creation by any user
+- Voting system: 1 address = 1 vote
+- Configurable voting period (default: 3 days)
+- Double-vote prevention through mapping
+- Events for on-chain activity tracking
+- Real-time status queries
+- Proposal execution after period completion
 
-## 🛠️ Tecnologías
+## 🛠️ Technologies
 
 - **Solidity**: ^0.8.20
-- **Remix IDE**: Desarrollo y testing
+- **Remix IDE**: Development and testing
 
-## 🚀 Uso
+## 🚀 Usage
 
-### Desplegar el contrato
+### Deploy the contract
 
-1. Abrir `contracts/VotingSystem.sol` en Remix
-2. Compilar con CTRL + S
-3. Ir a Deploy & Run Transactions
-4. Seleccionar entorno: Remix VM (Shanghai)
-5. Click en Deploy
+1. Open `contracts/VotingSystem.sol` in Remix
+2. Compile with CTRL + S
+3. Go to Deploy & Run Transactions
+4. Select environment: Remix VM (Shanghai)
+5. Click Deploy
 
-### Crear una propuesta
-
+### Create a proposal
 ```solidity
 createProposal(
-    "Aumentar presupuesto desarrollo",
-    "Propuesta para incrementar el presupuesto en un 20%"
+    "Increase development budget",
+    "Proposal to increase the budget by 20%"
 )
 ```
 
-### Votar
-
+### Vote
 ```solidity
-// Votar a favor
+// Vote in favor
 vote(0, true)
 
-// Votar en contra
+// Vote against
 vote(0, false)
 ```
 
-### Consultar resultados
-
+### Query results
 ```solidity
-// Información completa de la propuesta
+// Complete proposal information
 getProposal(0)
 
-// Estado actual de la votación
+// Current voting status
 getVotingStatus(0)
 
-// Verificar si una dirección ha votado
+// Check if an address has voted
 hasVoted(0, "0x...")
 ```
 
-## 📝 Funciones principales
+## 📝 Main Functions
 
-| Función | Descripción |
+| Function | Description |
 |---------|-------------|
-| `createProposal` | Crea una nueva propuesta |
-| `vote` | Emite un voto a favor o en contra |
-| `executeProposal` | Marca propuesta como ejecutada tras fin de periodo |
-| `getProposal` | Obtiene detalles de una propuesta |
-| `getVotingStatus` | Retorna estado actual de la votación |
-| `hasVoted` | Verifica si una dirección ya votó |
-| `getAllProposalsCount` | Retorna el total de propuestas creadas |
-| `setVotingPeriod` | Modifica el periodo de votación (testing) |
+| `createProposal` | Creates a new proposal |
+| `vote` | Casts a vote in favor or against |
+| `executeProposal` | Marks proposal as executed after period ends |
+| `getProposal` | Gets details of a proposal |
+| `getVotingStatus` | Returns current voting status |
+| `hasVoted` | Checks if an address has already voted |
+| `getAllProposalsCount` | Returns total number of proposals created |
+| `setVotingPeriod` | Modifies voting period (for testing) |
 
 ## 🧪 Testing
 
-### Tests automatizados
+### Automated tests
 
-1. Activar plugin "Solidity unit testing" en Remix
-2. Seleccionar `tests/VotingSystem.test.sol`
-3. Click en Run
+1. Enable "Solidity unit testing" plugin in Remix
+2. Select `tests/VotingSystem.test.sol`
+3. Click Run
 
-### Escenarios de prueba manuales
+### Manual test scenarios
 
-Ver documentación detallada en `scripts/test_scenarios.md`
+See detailed documentation in `scripts/test_scenarios.md`
 
-## 📊 Estructura del Proyecto
-
+## 📊 Project Structure
 ```
 decentralized-voting-system/
 ├── contracts/              # Smart contracts
 │   └── VotingSystem.sol
-├── tests/                  # Tests automatizados
+├── tests/                  # Automated tests
 │   └── VotingSystem.test.sol
-├── scripts/                # Documentación de pruebas
+├── scripts/                # Test documentation
 │   └── test_scenarios.md
 ├── .gitignore
 ├── LICENSE
 └── README.md
 ```
 
-## 🔐 Seguridad
+## 🔐 Security
 
-- Prevención de doble voto mediante mapping por dirección
-- Validación temporal con `block.timestamp` para controlar el periodo
-- Flag `executed` para evitar re-ejecución de propuestas
-- Require statements en todas las funciones críticas
+- Double-vote prevention through address mapping
+- Temporal validation with `block.timestamp` to control the period
+- `executed` flag to prevent proposal re-execution
+- Require statements in all critical functions
 
-## 🚧 Mejoras futuras
+## 🚧 Future Improvements
 
-- Implementar votación ponderada por tokens ERC20
-- Añadir quorum mínimo para validar propuestas
-- Sistema de delegación de votos
-- Timelock para ejecución de propuestas
-- Frontend con React y Web3.js
-- Deploy en testnet (Sepolia)
+- Implement token-weighted voting with ERC20
+- Add minimum quorum to validate proposals
+- Vote delegation system
+- Timelock for proposal execution
+- Frontend with React and Web3.js
+- Deploy to testnet (Sepolia)
 
-## 👤 Autor
+## 👤 Author
 
 **Carlos**
 
-- 💼 Software Engineer Backend en Indra
-- 📍 San Fernando, Cádiz, España
+- 💼 Backend Software Engineer at Indra
+- 📍 San Fernando, Cádiz, Spain
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está bajo la Licencia MIT - ver [LICENSE](LICENSE) para detalles.
-```
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
