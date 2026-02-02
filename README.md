@@ -127,13 +127,10 @@ decentralized-voting-system/
 
 **Carlos**
 
-- 🎓 Máster en Blockchain - CodeCrypto Academy (2024-2025)
-- 💼 Team Lead Developer en Indra
+- 💼 Software Engineer Backend en Indra
 - 📍 San Fernando, Cádiz, España
 
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT - ver [LICENSE](LICENSE) para detalles.
 ```
-
-Pégalo en tu README.md y cuando esté listo nos preparamos para subir todo a GitHub.
