@@ -24,6 +24,7 @@ Voting system that allows users to create proposals and vote in a decentralized 
 
 - **Solidity**: ^0.8.20
 - **Remix IDE**: Development and testing
+- 🚧 Future: Migrate to Foundry for advanced testing and gas optimization
 
 ## 🚀 Usage
 
